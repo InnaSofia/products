@@ -32,7 +32,7 @@ return(
     <div className=''>
   <div className='text-lg font-medium text-gray-900'>{product.number}. {product.name}</div>
   
-  </div><div><Button title='Добавлено!'/></div>
+  </div><div><Button title='Добавено!'/></div>
   </div>
 )
 })}
