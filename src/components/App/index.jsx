@@ -1,30 +1,34 @@
 import Header from '../Header';
 import Products from '../Products';
 import { useState } from 'react';
-
+import uuid4 from "uuid4";
 
 function App() {
 
   const [products, setProducts] = useState([
     {
-      id:1,
+      id:uuid4(),
      number:1,
-      name: 'Молоко'
+      name: 'Молоко',
+      isAddid: false
     },
     {
-      id:2,
+      id:uuid4(),
       number:2,
-      name: 'Хлеб'
+      name: 'Хлеб',
+      isAddid: false
     },
     {
-      id:3,
+      id:uuid4(),
       number:3,
-      name: 'Кефир'
+      name: 'Кефир',
+      isAddid: false
     },
     {
-      id:4,
+      id:uuid4(),
       number:4,
-      name: 'Конфеты'
+      name: 'Конфеты',
+      isAddid: false
     }
   ])
 
@@ -44,9 +48,9 @@ function App() {
     <p>Список покупок пуст</p>
    </div>
    )} 
-    {products.length > 0 && products.map((product) => {
+    {products.length > 0 && products.map((product, index) => {
            return(
-      <Products key= {product.id} product={product} deleteProduct={deleteProduct}/>
+      <Products key= {product.id} product={product} deleteProduct={deleteProduct} index={index}/>
       
 )})
 
