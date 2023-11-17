@@ -1,5 +1,5 @@
 import Header from '../Header';
-import Button from '../Button/Button';
+import Products from '../Products';
 import { useState } from 'react';
 
 
@@ -26,19 +26,12 @@ function App() {
   return (
     <div>
    <Header />
-{products.map((product) =>{
-return(
-  <div className='max-w-xl mx-auto flex justify-between relative bg-white py-5 hover:bg-gray-50 px-4'>
-    <div className=''>
-  <div className='text-lg font-medium text-gray-900'>{product.number}. {product.name}</div>
-  
-  </div><div><Button title='Добавлено!'/></div>
-  </div>
-)
-})}
+   {products.map((product) =>{
+           return(
+      <Products product={product}/>
+)})}
     
     </div>
-  );
-}
+  );}
 
 export default App;
